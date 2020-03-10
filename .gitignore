@@ -1,0 +1,9 @@
+.idea
+
+.env
+.docker_build/
+
+/config.yml
+/k8s/configmap.yml
+
+/ea_bot

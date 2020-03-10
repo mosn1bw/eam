@@ -1,0 +1,123 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "AH7jcN7pvaPDU6UjHdpT081DDGk=",
+			"path": "cloud.google.com/go/compute/metadata",
+			"revision": "3afaae429987a1884530d6018d6e963a932d28c0",
+			"revisionTime": "2018-03-02T19:04:14Z"
+		},
+		{
+			"checksumSHA1": "Qq7Gzany1n6gK6hpZQq9UXFhGGo=",
+			"comment": "v1.0rc1-110-g4cc2de6",
+			"path": "github.com/gin-gonic/gin",
+			"revision": "4cc2de6207f4128624cbdd16be30f64966c67c08"
+		},
+		{
+			"checksumSHA1": "M8Z61f8GZs6CO23wP+ekRgZEo+w=",
+			"comment": "v1.0rc1-110-g4cc2de6",
+			"path": "github.com/gin-gonic/gin/binding",
+			"revision": "4cc2de6207f4128624cbdd16be30f64966c67c08"
+		},
+		{
+			"checksumSHA1": "/cPJSLLdEAWI/Mavbbe13RgSfP4=",
+			"comment": "v1.0rc1-110-g4cc2de6",
+			"path": "github.com/gin-gonic/gin/render",
+			"revision": "4cc2de6207f4128624cbdd16be30f64966c67c08"
+		},
+		{
+			"checksumSHA1": "MFkrEy77SoBbEtLd3Ros+NZO35w=",
+			"path": "github.com/heroku/x/hmetrics",
+			"revision": "705849e307dd75c91728463dea5bfd08ef493e64",
+			"revisionTime": "2017-10-04T17:02:40Z"
+		},
+		{
+			"checksumSHA1": "GOeW0t8PSBNHFTUHmdSgPv2kl/0=",
+			"path": "github.com/heroku/x/hmetrics/onload",
+			"revision": "705849e307dd75c91728463dea5bfd08ef493e64",
+			"revisionTime": "2017-10-04T17:02:40Z"
+		},
+		{
+			"checksumSHA1": "ZUOd8OUOp+xdpB7p4w/O86Y8wyc=",
+			"path": "github.com/manucorporat/sse",
+			"revision": "c142f0f1baea5cef7f98a8a6c222f6134368c1f5"
+		},
+		{
+			"checksumSHA1": "sEvWJKs6aL3UR/p4v7idVo54urY=",
+			"path": "github.com/mattn/go-colorable",
+			"revision": "40e4aedc8fabf8c23e040057540867186712faa5"
+		},
+		{
+			"checksumSHA1": "lQlNwdfW3dVSpBhim0KHyxcHOeo=",
+			"path": "github.com/mattn/go-isatty",
+			"revision": "7fcbc72f853b92b5720db4a6b8482be612daef24"
+		},
+		{
+			"checksumSHA1": "hKZGpbFuCrkE4s1vxubKK1aFlfI=",
+			"path": "golang.org/x/net/context",
+			"revision": "d9558e5c97f85372afee28cf2b6059d7d3818919"
+		},
+		{
+			"checksumSHA1": "njV1GJojWGOLSQqXB34S35ct190=",
+			"path": "golang.org/x/oauth2",
+			"revision": "2f32c3ac0fa4fb807a0fcefb0b6f2468a0d99bd0",
+			"revisionTime": "2018-02-23T11:17:35Z"
+		},
+		{
+			"checksumSHA1": "oSg3tdOtNm3xxj6X9FNxikU4w14=",
+			"path": "golang.org/x/oauth2/google",
+			"revision": "2f32c3ac0fa4fb807a0fcefb0b6f2468a0d99bd0",
+			"revisionTime": "2018-02-23T11:17:35Z"
+		},
+		{
+			"checksumSHA1": "SYinbTOs4JSXuw1R5RhiT+NnKNc=",
+			"path": "golang.org/x/oauth2/internal",
+			"revision": "2f32c3ac0fa4fb807a0fcefb0b6f2468a0d99bd0",
+			"revisionTime": "2018-02-23T11:17:35Z"
+		},
+		{
+			"checksumSHA1": "huVltYnXdRFDJLgp/ZP9IALzG7g=",
+			"path": "golang.org/x/oauth2/jws",
+			"revision": "2f32c3ac0fa4fb807a0fcefb0b6f2468a0d99bd0",
+			"revisionTime": "2018-02-23T11:17:35Z"
+		},
+		{
+			"checksumSHA1": "QPndO4ODVdEBILRhJ6869UDAoHc=",
+			"path": "golang.org/x/oauth2/jwt",
+			"revision": "2f32c3ac0fa4fb807a0fcefb0b6f2468a0d99bd0",
+			"revisionTime": "2018-02-23T11:17:35Z"
+		},
+		{
+			"checksumSHA1": "EooPqEpEyY/7NCRwHDMWhhlkQNw=",
+			"path": "google.golang.org/api/gensupport",
+			"revision": "3caa384156365e545aea85c3dca8c95bc666a94d",
+			"revisionTime": "2018-03-03T00:05:15Z"
+		},
+		{
+			"checksumSHA1": "BWKmb7kGYbfbvXO6E7tCpTh9zKE=",
+			"path": "google.golang.org/api/googleapi",
+			"revision": "3caa384156365e545aea85c3dca8c95bc666a94d",
+			"revisionTime": "2018-03-03T00:05:15Z"
+		},
+		{
+			"checksumSHA1": "1K0JxrUfDqAB3MyRiU1LKjfHyf4=",
+			"path": "google.golang.org/api/googleapi/internal/uritemplates",
+			"revision": "3caa384156365e545aea85c3dca8c95bc666a94d",
+			"revisionTime": "2018-03-03T00:05:15Z"
+		},
+		{
+			"checksumSHA1": "SvwzRAzhnNigC4QNAp1dcoly0rg=",
+			"path": "google.golang.org/api/sheets/v4",
+			"revision": "3caa384156365e545aea85c3dca8c95bc666a94d",
+			"revisionTime": "2018-03-03T00:05:15Z"
+		},
+		{
+			"checksumSHA1": "P7dBpV3QA/3GJWGNwb9Hn3BzCQs=",
+			"comment": "v5.9.1",
+			"path": "gopkg.in/bluesuncorp/validator.v5",
+			"revision": "d627af88ac021317a280d320986282a6dc97549a"
+		}
+	],
+	"rootPath": "gitlab.com/yai/ea-messenger"
+}

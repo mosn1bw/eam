@@ -41,14 +41,29 @@ type ImagemapArea struct {
 	Height int `json:"height"`
 }
 
+// ImagemapVideo type
+type ImagemapVideo struct {
+	OriginalContentURL string                     `json:"originalContentUrl"`
+	PreviewImageURL    string                     `json:"previewImageUrl"`
+	Area               ImagemapArea               `json:"area"`
+	ExternalLink       *ImagemapVideoExternalLink `json:"externalLink,omitempty"`
+}
+
+// ImagemapVideoExternalLink type
+type ImagemapVideoExternalLink struct {
+	LinkURI string `json:"linkUri"`
+	Label   string `json:"label"`
+}
+
 // ImagemapAction type
 type ImagemapAction interface {
 	json.Marshaler
-	imagemapAction()
+	ImagemapAction()
 }
 
 // URIImagemapAction type
 type URIImagemapAction struct {
+	Label   string
 	LinkURL string
 	Area    ImagemapArea
 }
@@ -57,10 +72,12 @@ type URIImagemapAction struct {
 func (a *URIImagemapAction) MarshalJSON() ([]byte, error) {
 	return json.Marshal(&struct {
 		Type    ImagemapActionType `json:"type"`
+		Label   string             `json:"label,omitempty"`
 		LinkURL string             `json:"linkUri"`
 		Area    ImagemapArea       `json:"area"`
 	}{
 		Type:    ImagemapActionTypeURI,
+		Label:   a.Label,
 		LinkURL: a.LinkURL,
 		Area:    a.Area,
 	})
@@ -68,39 +85,46 @@ func (a *URIImagemapAction) MarshalJSON() ([]byte, error) {
 
 // MessageImagemapAction type
 type MessageImagemapAction struct {
-	Text string
-	Area ImagemapArea
+	Label string
+	Text  string
+	Area  ImagemapArea
 }
 
 // MarshalJSON method of MessageImagemapAction
 func (a *MessageImagemapAction) MarshalJSON() ([]byte, error) {
 	return json.Marshal(&struct {
-		Type ImagemapActionType `json:"type"`
-		Text string             `json:"text"`
-		Area ImagemapArea       `json:"area"`
+		Type  ImagemapActionType `json:"type"`
+		Label string             `json:"label,omitempty"`
+		Text  string             `json:"text"`
+		Area  ImagemapArea       `json:"area"`
 	}{
-		Type: ImagemapActionTypeMessage,
-		Text: a.Text,
-		Area: a.Area,
+		Type:  ImagemapActionTypeMessage,
+		Label: a.Label,
+		Text:  a.Text,
+		Area:  a.Area,
 	})
 }
 
-// implements ImagemapAction interface
-func (a *URIImagemapAction) imagemapAction()     {}
-func (a *MessageImagemapAction) imagemapAction() {}
+// ImagemapAction implements ImagemapAction interface
+func (a *URIImagemapAction) ImagemapAction() {}
+
+// ImagemapAction implements ImagemapAction interface
+func (a *MessageImagemapAction) ImagemapAction() {}
 
 // NewURIImagemapAction function
-func NewURIImagemapAction(linkURL string, area ImagemapArea) *URIImagemapAction {
+func NewURIImagemapAction(label, linkURL string, area ImagemapArea) *URIImagemapAction {
 	return &URIImagemapAction{
+		Label:   label,
 		LinkURL: linkURL,
 		Area:    area,
 	}
 }
 
 // NewMessageImagemapAction function
-func NewMessageImagemapAction(text string, area ImagemapArea) *MessageImagemapAction {
+func NewMessageImagemapAction(label, text string, area ImagemapArea) *MessageImagemapAction {
 	return &MessageImagemapAction{
-		Text: text,
-		Area: area,
+		Label: label,
+		Text:  text,
+		Area:  area,
 	}
 }

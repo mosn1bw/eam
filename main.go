@@ -211,26 +211,11 @@ func (app *EaBot) handleText(message *linebot.TextMessage, replyToken string, so
 		} else {
 			return app.replyText(replyToken, "Bot can't use profile API without user ID")
 		}
-	case "buttons":
-		imageURL := app.appBaseURL + "/static/buttons/1040.jpg"
-		template := linebot.NewButtonsTemplate(
-			imageURL, "My button sample", "Hello, my button",
-			linebot.NewURITemplateAction("Go to line.me", "https://line.me"),
-			linebot.NewPostbackTemplateAction("Say hello1", "hello こんにちは", ""),
-			linebot.NewPostbackTemplateAction("言 hello2", "hello こんにちは", "hello こんにちは"),
-			linebot.NewMessageTemplateAction("Say message", "Rice=米"),
-		)
-		if _, err := app.bot.ReplyMessage(
-			replyToken,
-			linebot.NewTemplateMessage("Buttons alt text", template),
-		).Do(); err != nil {
-			return err
-		}
 	case "confirm":
 		template := linebot.NewConfirmTemplate(
 			"Do it?",
-			linebot.NewMessageTemplateAction("Yes", "Yes!"),
-			linebot.NewMessageTemplateAction("No", "No!"),
+			linebot.NewMessageAction("Yes", "Yes!"),
+			linebot.NewMessageAction("No", "No!"),
 		)
 		if _, err := app.bot.ReplyMessage(
 			replyToken,
@@ -250,86 +235,12 @@ func (app *EaBot) handleText(message *linebot.TextMessage, replyToken string, so
 		rejectedText := "Reject subscriber \"" + profile.DisplayName + "\" (" + encodeUserId + ")"
 		template := linebot.NewConfirmTemplate(
 			text,
-			linebot.NewMessageTemplateAction("Approve", approvedText),
-			linebot.NewMessageTemplateAction("Reject", rejectedText),
+			linebot.NewMessageAction("Approve", approvedText),
+			linebot.NewMessageAction("Reject", rejectedText),
 		)
 		if _, err := app.bot.ReplyMessage(
 			replyToken,
 			linebot.NewTemplateMessage(text, template),
-		).Do(); err != nil {
-			return err
-		}
-	case "carousel":
-		imageURL := app.appBaseURL + "/static/buttons/1040.jpg"
-		template := linebot.NewCarouselTemplate(
-			linebot.NewCarouselColumn(
-				imageURL, "hoge", "fuga",
-				linebot.NewURITemplateAction("Go to line.me", "https://line.me"),
-				linebot.NewPostbackTemplateAction("Say hello1", "hello こんにちは", ""),
-			),
-			linebot.NewCarouselColumn(
-				imageURL, "hoge", "fuga",
-				linebot.NewPostbackTemplateAction("言 hello2", "hello こんにちは", "hello こんにちは"),
-				linebot.NewMessageTemplateAction("Say message", "Rice=米"),
-			),
-		)
-		if _, err := app.bot.ReplyMessage(
-			replyToken,
-			linebot.NewTemplateMessage("Carousel alt text", template),
-		).Do(); err != nil {
-			return err
-		}
-	case "image carousel":
-		imageURL := app.appBaseURL + "/static/buttons/1040.jpg"
-		template := linebot.NewImageCarouselTemplate(
-			linebot.NewImageCarouselColumn(
-				imageURL,
-				linebot.NewURITemplateAction("Go to LINE", "https://line.me"),
-			),
-			linebot.NewImageCarouselColumn(
-				imageURL,
-				linebot.NewPostbackTemplateAction("Say hello1", "hello こんにちは", ""),
-			),
-			linebot.NewImageCarouselColumn(
-				imageURL,
-				linebot.NewMessageTemplateAction("Say message", "Rice=米"),
-			),
-			linebot.NewImageCarouselColumn(
-				imageURL,
-				linebot.NewDatetimePickerTemplateAction("datetime", "DATETIME", "datetime", "", "", ""),
-			),
-		)
-		if _, err := app.bot.ReplyMessage(
-			replyToken,
-			linebot.NewTemplateMessage("Image carousel alt text", template),
-		).Do(); err != nil {
-			return err
-		}
-	case "datetime":
-		template := linebot.NewButtonsTemplate(
-			"", "", "Select date / time !",
-			linebot.NewDatetimePickerTemplateAction("date", "DATE", "date", "", "", ""),
-			linebot.NewDatetimePickerTemplateAction("time", "TIME", "time", "", "", ""),
-			linebot.NewDatetimePickerTemplateAction("datetime", "DATETIME", "datetime", "", "", ""),
-		)
-		if _, err := app.bot.ReplyMessage(
-			replyToken,
-			linebot.NewTemplateMessage("Datetime pickers alt text", template),
-		).Do(); err != nil {
-			return err
-		}
-	case "imagemap":
-		if _, err := app.bot.ReplyMessage(
-			replyToken,
-			linebot.NewImagemapMessage(
-				app.appBaseURL+"/static/rich",
-				"Imagemap alt text",
-				linebot.ImagemapBaseSize{1040, 1040},
-				linebot.NewURIImagemapAction("https://store.line.me/family/manga/en", linebot.ImagemapArea{0, 0, 520, 520}),
-				linebot.NewURIImagemapAction("https://store.line.me/family/music/en", linebot.ImagemapArea{520, 0, 520, 520}),
-				linebot.NewURIImagemapAction("https://store.line.me/family/play/en", linebot.ImagemapArea{0, 520, 520, 520}),
-				linebot.NewMessageImagemapAction("URANAI!", linebot.ImagemapArea{520, 520, 520, 520}),
-			),
 		).Do(); err != nil {
 			return err
 		}

@@ -6,8 +6,8 @@ import (
 	"github.com/yaiio/ea-messenger/subscription"
 )
 
-func main() {
-	srv := subscription.NewSubscriptionService("Esperanca2-c88c88386981.json")
+func main2() {
+	srv := subscription.NewSubscriptionService("","")
 
 	sub := subscription.NewSubscriptionData(
 		"U4960c75d28849705bca861ff06c70f2f32",

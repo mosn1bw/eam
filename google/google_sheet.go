@@ -2,12 +2,15 @@ package main
 
 import (
 	"log"
+	"os"
 
 	"github.com/yaiio/ea-messenger/subscription"
 )
 
-func main2() {
-	srv := subscription.NewSubscriptionService("","")
+func main() {
+	jsonKey := os.Getenv("GOOGLE_JSON_KEY")
+	spreadSheetId := os.Getenv("SPREAD_SHEET_ID")
+	srv := subscription.NewSubscriptionService(jsonKey,spreadSheetId)
 
 	sub := subscription.NewSubscriptionData(
 		"U4960c75d28849705bca861ff06c70f2f32",

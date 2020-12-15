@@ -7,7 +7,7 @@ import (
 	"github.com/yaiio/ea-messenger/subscription"
 )
 
-func main() {
+func main2() {
 	jsonKey := os.Getenv("GOOGLE_JSON_KEY")
 	spreadSheetId := os.Getenv("SPREAD_SHEET_ID")
 	srv := subscription.NewSubscriptionService(jsonKey,spreadSheetId)

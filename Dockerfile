@@ -11,7 +11,7 @@ RUN curl https://codon-buildpacks.s3.amazonaws.com/buildpacks/heroku/go.tgz | ta
 RUN STACK=heroku-18 /tmp/buildpack/heroku/go/bin/compile /app /tmp/build_cache /tmp/env
 
 # Prepare final, minimal image
-FROM heroku/heroku:18
+FROM heroku/heroku:20
 
 COPY --from=build /app /app
 ENV HOME /app

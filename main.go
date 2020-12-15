@@ -72,6 +72,12 @@ type EaBot struct {
 
 // EaBot function
 func NewEaBot(channelSecret, channelToken, appBaseURL, googleJsonKeyBase64, spreadsheetId string) (*EaBot, error) {
+
+	fmt.Printf(fmt.Sprintf("channelSecret: %s", channelSecret))
+	fmt.Printf(fmt.Sprintf("channelToken: %s", channelToken))
+	fmt.Printf(fmt.Sprintf("appBaseURL: %s", appBaseURL))
+	fmt.Printf(fmt.Sprintf("spreadsheetId: %s", spreadsheetId))
+
 	apiEndpointBase := os.Getenv("ENDPOINT_BASE")
 	if apiEndpointBase == "" {
 		apiEndpointBase = linebot.APIEndpointBase

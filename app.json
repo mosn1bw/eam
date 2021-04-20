@@ -1,7 +1,7 @@
 {
   "name": "LineBotTemplate",
   "description": "Line Bot API template",
-  "repository": "https://github.com/kkdai/LineBotTemplate",
+  "repository": "http://github.com/yaiio/ea-messenger",
   "keywords": ["Line", "go", "static"],
   "buildpacks": [
     {

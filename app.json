@@ -1,12 +1,24 @@
 {
-  "name": "Start on Heroku: Go",
-  "description": "Go Getting Started Example App",
-  "keywords": [
-    "getting-started",
-    "go",
-    "sample",
-    "example"
+  "name": "LineBotTemplate",
+  "description": "Line Bot API template",
+  "repository": "https://github.com/kkdai/LineBotTemplate",
+  "keywords": ["Line", "go", "static"],
+  "buildpacks": [
+    {
+      "url": "http://github.com/yaiio/ea-messenger"
+    },
+    {
+      "url": "heroku/go"
+    }
   ],
-  "website": "http://github.com/yaiio/ea-messenger",
-  "repository": "http://github.com/yaiio/ea-messenger"
+  "env": {
+    "ChannelAccessToken": {
+      "description": "Channel Access Token",
+      "required": true
+    },
+    "ChannelSecret": {
+      "description": "Channel Secret",
+      "required": true
+    }
+  }
 }
